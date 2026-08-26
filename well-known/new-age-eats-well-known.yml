@@ -1,0 +1,67 @@
+generated: '2026-08-26'
+method: probed
+source: https://newageeats.com/
+note: >-
+  New Age Eats (formerly New Age Meats) ceased operations in March 2023. Its only live host is
+  newageeats.com, which now serves a static archived copy of the company's former Shopify
+  storefront (Cloudflare + LiteSpeed, Wayback "wombat" rewriting artifacts still embedded in the
+  HTML). Every /.well-known/ path returns a real 404 with a 1,249-byte error page — there is no
+  catch-all soft-200 here. The pre-rebrand host newagemeats.com 301s to ojkgas.com, which does not
+  resolve. No WellKnown or SecurityTxt pointer is emitted: this file records an absence.
+hit_count: 0
+hosts:
+  - host: https://newageeats.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+        file: null
+      - path: /.well-known/openid-configuration
+        status: 404
+        file: null
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+        file: null
+      - path: /.well-known/api-catalog
+        status: 404
+        file: null
+      - path: /.well-known/ai-plugin.json
+        status: 404
+        file: null
+      - path: /.well-known/agent-card.json
+        status: 404
+        file: null
+      - path: /.well-known/agent.json
+        status: 404
+        file: null
+  - host: https://newagemeats.com
+    documents:
+      - path: /
+        status: 301
+        file: null
+        note: >-
+          Redirects to https://ojkgas.com/, a host that does not resolve in DNS. The former primary
+          domain is dead, so no /.well-known/ probes were possible against it.
+contract_discovery:
+  note: >-
+    STEP 0b run against the only reachable host. No REST spec, no GraphQL surface, no MCP endpoint,
+    no agent card. The company never shipped a developer program; its product was cultivated pork
+    sausage, and it shut down before reaching market.
+  probes:
+    - url: https://newageeats.com/openapi.json
+      status: 404
+    - url: https://newageeats.com/openapi.yaml
+      status: 404
+    - url: https://newageeats.com/swagger.json
+      status: 404
+    - url: https://newageeats.com/api-docs
+      status: 404
+    - url: https://newageeats.com/llms.txt
+      status: 404
+    - url: https://newageeats.com/robots.txt
+      status: 200
+      note: 43 bytes, a single Sitemap directive. No API or docs paths referenced.
+    - url: https://newageeats.com/sitemap.xml
+      status: 200
+      note: >-
+        29 URLs, all marketing/storefront pages of the archived Shopify site (about-us, news,
+        careers, cart, account/login) plus scrape residue. No developer, docs, or API path.

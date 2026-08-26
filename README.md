@@ -64,5 +64,14 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-New Age Eats is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://forgeglobal.com/new-age-eats_stock/
+New Age Eats (founded 2018 in Berkeley, California as New Age Meats, rebranded in 2022) was a
+cultivated-meat startup building cell-cultured pork sausage. It raised roughly $32 million,
+including a $25 million Series A in 2021 led by Hanwha Solutions, and was completing a pilot plant
+in Alameda, California when founder and CEO Brian Spears announced the wind-down in March 2023.
+
+It was a food-science company, never a software company: no developer portal, no documentation, no
+SDKs, and no machine-readable API contract. Enrichment on 2026-08-26 probed the surviving domain and
+recorded the absence in `well-known/new-age-eats-well-known.yml`.
+
+- Website (archived storefront): https://newageeats.com
+- Secondary-market listing: https://forgeglobal.com/new-age-eats_stock/
